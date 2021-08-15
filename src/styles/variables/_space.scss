@@ -1,16 +1,22 @@
-@function space($key) {
+@function space($key, $unit: 'rem') {
   $space: (
-    0: 0.25rem,
-    1: 0.5rem,
-    2: 1rem,
-    3: 2rem,
-    4: 3rem,
-    5: 5rem,
-    6: 7rem,
-    7: 12rem,
-    8: 16rem,
-    9: 24rem
+    0: 4,
+    1: 8,
+    2: 16,
+    3: 32,
+    4: 48,
+    5: 80,
+    6: 112,
+    7: 192,
+    8: 256,
+    9: 384
   );
 
-  @return map-get($space, $key);
+  $value: map-get($space, $key);
+
+  @if ($unit == 'rem') {
+    @return rem($value);
+  }
+
+  @return $value;
 }

@@ -1,7 +1,7 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   HostBinding,
-  OnInit,
   ViewEncapsulation
 } from '@angular/core';
 
@@ -9,7 +9,8 @@ import {
   selector: 'app-concept',
   templateUrl: './concept.component.html',
   styleUrls: ['./concept.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConceptComponent {
   @HostBinding('class')
@@ -53,8 +54,4 @@ export class ConceptComponent {
         'The landscaping of common facilities and play areas are an urban rendition of nature inspired by wetlands and meandering streams.'
     }
   ];
-
-  index(idx: number) {
-    return idx;
-  }
 }

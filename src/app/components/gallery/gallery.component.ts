@@ -7,7 +7,8 @@ import {
   AfterViewInit,
   OnDestroy,
   OnInit,
-  NgZone
+  NgZone,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { interval, of, Subject } from 'rxjs';
 import { first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -42,7 +43,8 @@ const imageSet = [...Array(16).keys()].map(id => ({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostBinding('class')

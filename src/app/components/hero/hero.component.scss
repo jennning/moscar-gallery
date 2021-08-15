@@ -146,7 +146,7 @@
 
   @for $n from 1 through 4 {
     &:nth-child(#{$n}) {
-      margin-left: #{space(2) * ($n - 1)};
+      margin-left: #{space(2, null) * ($n - 1)};
 
       @for $m from 1 through 7 {
         .hero-title-letter:nth-child(#{$m}) {

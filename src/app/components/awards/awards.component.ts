@@ -1,10 +1,16 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  ViewEncapsulation
+} from '@angular/core';
 
 @Component({
   selector: 'app-awards',
   templateUrl: './awards.component.html',
   styleUrls: ['./awards.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AwardsComponent {
   @HostBinding('class')

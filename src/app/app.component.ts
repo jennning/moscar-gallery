@@ -9,10 +9,8 @@ import {
   NgZone,
   OnDestroy,
   OnInit,
-  TemplateRef,
   ViewChild,
-  ViewEncapsulation,
-  ViewRef
+  ViewEncapsulation
 } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import {

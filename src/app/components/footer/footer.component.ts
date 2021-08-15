@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, EventEmitter } from '@angular/core';
 import {
   Component,
   HostBinding,
@@ -11,7 +11,8 @@ import { ANCHORS } from 'src/app/types';
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FooterComponent {
   @HostBinding('class')

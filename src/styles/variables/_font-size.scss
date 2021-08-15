@@ -1,15 +1,15 @@
 @function font-size($key) {
   $font-size: (
-    1: 0.5rem,
-    2: 0.75rem,
-    3: 0.875rem,
-    4: 1rem,
-    5: 1.5rem,
-    6: 2.4rem,
-    7: 3rem,
-    8: 6rem,
-    9: 12rem
+    1: 8,
+    2: 12,
+    3: 14,
+    4: 16,
+    5: 24,
+    6: 38,
+    7: 48,
+    8: 96,
+    9: 192
   );
 
-  @return map-get($font-size, $key);
+  @return rem(map-get($font-size, $key));
 }
