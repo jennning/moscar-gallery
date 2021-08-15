@@ -53,13 +53,10 @@
 
 .footer-scroller-indicator {
   @include no-interaction;
-  @include full;
+  @include full-abs;
 
-  display: block;
-  position: absolute;
   opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
+  transition: opacity 0.3s ease;
 
   &::before {
     content: '';

@@ -31,20 +31,15 @@
 }
 
 .hero-image-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  @include full-abs;
+
   z-index: 0;
 }
 
 .hero-image {
   @include no-interaction;
+  @include full-abs;
 
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   object-fit: cover;
   will-change: transform;
   filter: sepia(12%);

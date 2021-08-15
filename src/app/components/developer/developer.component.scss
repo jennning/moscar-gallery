@@ -141,21 +141,18 @@
   display: flex;
 
   &::before {
-    @include square(100%);
+    @include full-abs;
 
     content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
     background-image: linear-gradient(
       350deg,
       #{color('primary900')},
       transparent 40%
     );
-    z-index: 1;
+    border-radius: 4px;
     opacity: 0;
     transition: opacity 0.4s ease 0.1s;
-    border-radius: 4px;
+    z-index: 1;
   }
 
   &::after {

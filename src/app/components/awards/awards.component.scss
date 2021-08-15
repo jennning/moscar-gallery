@@ -44,6 +44,21 @@
     color('primary300'),
     transparentize(color('primary300'), 0.9)
   );
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + #{space(0)});
+    left: 10%;
+    height: 2px;
+    width: 80%;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      color('white'),
+      transparent
+    );
+  }
 }
 
 .awards-image {

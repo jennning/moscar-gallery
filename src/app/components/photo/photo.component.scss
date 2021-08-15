@@ -86,12 +86,10 @@ $corner-size: rem(12);
 
   &::before,
   &::after {
-    @include round(100%);
+    @include full-abs;
 
-    content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    border-radius: 50%;
     background-color: color('primary');
     animation: photo-frame 0.8s ease-out infinite;
   }
