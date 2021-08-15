@@ -1,0 +1,8 @@
+@function font-family($key) {
+  $font: (
+    sans: #{'Inter, sans-serif'},
+    serif: #{'Scheherazade, serif'}
+  );
+
+  @return map-get($font, $key);
+}

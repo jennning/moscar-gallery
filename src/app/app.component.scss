@@ -1,0 +1,100 @@
+@import 'base';
+
+.page-main {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.app-gallery {
+  display: block;
+  margin-top: 6vmax;
+}
+
+.app-concept {
+  display: block;
+  position: relative;
+  padding-bottom: 12vmax;
+  margin-top: -14.5vmax;
+  z-index: 1;
+
+  @include tablet {
+    margin-top: 6vmax;
+  }
+}
+
+.app-features {
+  background-color: color('primary600');
+}
+
+.app-photo {
+  position: relative;
+}
+
+.background {
+  --deco-size: clamp(#{rem(400)}, 36vmax, #{rem(800)});
+  @include no-interaction;
+
+  position: absolute;
+  z-index: -1;
+  opacity: 0.1;
+  filter: brightness(0.8);
+  animation: spin 60s linear infinite;
+
+  &.--stars {
+    width: var(--deco-size);
+    top: -4vmax;
+    right: 8vmax;
+
+    @include tablet {
+      top: 24vmax;
+      right: 12vmax;
+    }
+
+    @include mobile {
+      top: 8vmax;
+      right: 8vmax;
+    }
+  }
+
+  &.--canyons {
+    width: var(--deco-size);
+    top: 24vmax;
+    left: -14vmax;
+    animation-direction: reverse;
+
+    @include tablet {
+      bottom: 0;
+    }
+
+    @include mobile {
+      left: -24vmax;
+    }
+  }
+
+  &.--water {
+    width: var(--deco-size);
+    bottom: 0;
+    left: calc(50% - 10vmax);
+
+    @include tablet {
+      bottom: -12vmax;
+    }
+  }
+}
+
+.app-final {
+  position: relative;
+  padding: space(6) 0 space(5);
+  background-color: color('primary');
+  color: color('primary900');
+  border-top: 1px solid color('primary900');
+
+  @include mobile {
+    padding-top: space(4);
+    padding-bottom: space(4);
+  }
+}
+
+.anchor {
+  padding-top: var(--header-height);
+}

@@ -1,0 +1,16 @@
+@function space($key) {
+  $space: (
+    0: 0.25rem,
+    1: 0.5rem,
+    2: 1rem,
+    3: 2rem,
+    4: 3rem,
+    5: 5rem,
+    6: 7rem,
+    7: 12rem,
+    8: 16rem,
+    9: 24rem
+  );
+
+  @return map-get($space, $key);
+}

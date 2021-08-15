@@ -1,0 +1,40 @@
+<h1 class="hero-title">
+  <span class="hero-title-word" *ngFor="let text of title">
+    <i class="hero-title-letter" *ngFor="let letter of text"> {{ letter }} </i>
+  </span>
+</h1>
+
+<div class="hero-award-container">
+  <img
+    class="hero-award"
+    src="assets/images/awards/award-skyline-excellence.png"
+    alt=""
+  />
+  <img
+    class="hero-award"
+    src="assets/images/awards/award-best-mass-market-winner.png"
+    alt=""
+  />
+</div>
+
+<div class="hero-image-container" #imageContainer>
+  <img
+    class="hero-image --facade"
+    src="assets/images/hero/hero-facade.png"
+    alt=""
+  />
+  <img
+    class="hero-image --tower"
+    src="assets/images/hero/hero-tower.png"
+    alt=""
+  />
+  <img
+    class="hero-image --background"
+    src="assets/images/hero/hero-background.png"
+    alt=""
+  />
+</div>
+
+<button class="hero-scroller">
+  <i class="hero-scroller-dot"></i>
+</button>

@@ -1,0 +1,23 @@
+<header class="awards-header">
+  <h2 class="awards-title title --dark">MULTI<br />AWARD<br />WINNING</h2>
+
+  <p class="awards-description">Development worthy of accolades</p>
+</header>
+
+<ul class="awards-list">
+  <li class="awards-item" *ngFor="let award of awards">
+    <article class="awards-card">
+      <figure class="awards-frame">
+        <img
+          src="assets/images/awards/{{ award.src }}"
+          [alt]="award.category"
+          class="awards-image"
+        />
+      </figure>
+
+      <i class="awards-deco"></i>
+      <h3 class="awards-category">{{ award.category }}</h3>
+      <p class="awards-name">{{ award.name }}</p>
+    </article>
+  </li>
+</ul>

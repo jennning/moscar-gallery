@@ -1,0 +1,101 @@
+@import 'base';
+
+.awards {
+  padding: space(2) 0 space(5);
+  display: flex;
+
+  @include tablet {
+    flex-direction: column;
+  }
+}
+
+.awards-header {
+  padding-left: space(3);
+  margin-right: space(4);
+
+  @include tablet {
+    margin-bottom: space(4);
+    margin-right: 0;
+  }
+}
+
+.awards-description {
+  line-height: 1.6;
+}
+
+.awards-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, rem(240));
+  grid-gap: space(3);
+
+  @include tablet {
+    justify-content: center;
+  }
+}
+
+.awards-card {
+  position: relative;
+  text-align: center;
+  padding: space(3) space(1);
+  border-radius: 4px;
+  background-image: linear-gradient(
+    to bottom,
+    color('primary300'),
+    transparentize(color('primary300'), 0.9)
+  );
+}
+
+.awards-image {
+  display: block;
+  width: rem(160);
+  margin: auto;
+}
+
+.awards-deco {
+  position: relative;
+  margin: space(1) auto;
+  height: rem(32);
+  width: 40%;
+  background-color: color('primary900');
+  border-radius: rem(16);
+  display: flex;
+
+  &::before {
+    @include round(rem(16));
+
+    content: '';
+    display: block;
+    margin: auto;
+    background-color: color('white');
+    box-shadow: 0 0 rem(8) color('white');
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: rem(4);
+    height: rem(64);
+    top: calc(50% - #{rem(32)});
+    left: calc(50% - #{rem(2)});
+    background-image: linear-gradient(
+      to bottom,
+      transparent,
+      color('white-t1'),
+      transparent
+    );
+    animation: spin 1s linear infinite;
+  }
+}
+
+.awards-category {
+  padding: space(1) 0;
+  line-height: 1.4;
+  font-size: font-size(2);
+  font-weight: bold;
+  margin-bottom: space(2);
+}
+
+.awards-name {
+  @include typography('tiny');
+}

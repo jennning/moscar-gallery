@@ -1,0 +1,26 @@
+@function color($key) {
+  $primary: #d2bfa0;
+  $primary900: #1e1d1c;
+  $white: #f7f6f2;
+
+  $color: (
+    'primary': $primary,
+    'primary100': $primary,
+    'primary300': #7e7160,
+    'primary600': #312b29,
+    'primary800': #2e2929,
+    'primary900': $primary900,
+    'primary-t1': transparentize($primary, 0.9),
+    'primary-t7': transparentize($primary, 0.3),
+    'primary900-t1': transparentize($primary900, 0.9),
+    'primary900-t4': transparentize($primary900, 0.6),
+    'primary900-t6': transparentize($primary900, 0.4),
+    'red': #cb203a,
+    'gold': #fdd98a,
+    'white': $white,
+    'white-t1': transparentize($white, 0.9),
+    'white-t7': transparentize($white, 0.3)
+  );
+
+  @return map-get($color, $key);
+}

@@ -1,0 +1,29 @@
+@import 'base';
+
+.credit {
+  display: block;
+  padding: space(1) space(2);
+}
+
+.credit-text {
+  @include typography('tiny');
+  @include centerize('flex');
+}
+
+.credit-text {
+  color: color('primary');
+}
+
+.credit-link {
+  padding: space(1);
+  color: color('white');
+  margin-left: space(1);
+
+  @include mobile {
+    margin-left: space(2);
+  }
+}
+
+.credit-icon {
+  width: rem(12);
+}

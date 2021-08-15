@@ -1,0 +1,14 @@
+<ul class="gallery-list">
+  <li
+    class="gallery-item"
+    *ngFor="let image of images; trackBy: index"
+    (mouseover)="setHoverImage(image)"
+    (mouseout)="unsetHoverImage()"
+  >
+    <div class="gallery-card">
+      <img class="gallery-image-loader" src="assets/images/logo.png" alt="" />
+      <img class="gallery-image" [src]="image.src" alt="" />
+      <p class="gallery-name">{{ image.name }}</p>
+    </div>
+  </li>
+</ul>

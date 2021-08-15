@@ -1,0 +1,48 @@
+.title {
+  font-size: clamp(4rem, 6vmax, 8rem);
+  font-family: font-family(serif);
+  font-weight: bold;
+  color: color('primary');
+  letter-spacing: 0.4vmin;
+  background-image: linear-gradient(-164deg, color('primary'), color('white'));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px color('primary-t7');
+
+  @include tablet {
+    font-size: clamp(4rem, 8vmax, 8rem);
+  }
+
+  &.--dark {
+    color: color('primary900');
+    text-shadow: none;
+    background-image: linear-gradient(
+      -164deg,
+      color('primary300'),
+      color('primary900')
+    );
+  }
+}
+
+.subtitle {
+  --subtitle-shine: #{transparentize(color('white'), 0.3)};
+
+  font-size: font-size(7);
+  font-family: font-family(serif);
+  color: color('white');
+  letter-spacing: 0.6px;
+  text-shadow: 0 0 4px var(--subtitle-shine);
+
+  &.--dark {
+    --subtitle-shine: #{transparentize(color('primary300'), 0.3)};
+
+    font-weight: bold;
+    color: color('primary600');
+  }
+}
+
+.container {
+  width: clamp(#{rem(300)}, 100%, #{rem(1200)});
+  margin: auto;
+  padding-inline: space(2);
+}

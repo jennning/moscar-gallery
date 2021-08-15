@@ -1,0 +1,148 @@
+@import 'base';
+
+$corner-size: rem(12);
+
+.photo {
+  display: block;
+  width: 50%;
+  padding: space(3);
+  margin-top: 12vmin;
+  margin-left: 6vmin;
+
+  @include tablet {
+    width: calc(100% - 12vmin);
+  }
+
+  @include mobile {
+    width: 100%;
+    margin-top: 6vmin;
+    margin-left: 0;
+  }
+}
+
+.photo-stage {
+  @include no-interaction;
+
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  background-color: color('primary600');
+  display: flex;
+  border-radius: 4px;
+
+  @include corners(
+    $size: $corner-size,
+    $offset: calc(#{$corner-size} / 2 * -1)
+  );
+}
+
+.photo-container {
+  @include square(100%);
+  @include full-abs;
+
+  transition: opacity 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background-image: linear-gradient(
+      350deg,
+      #{color('primary900')},
+      transparent 60%
+    );
+    z-index: 2;
+  }
+}
+
+.photo-image {
+  @include full-abs;
+
+  object-fit: cover;
+  z-index: 1;
+  border-radius: 4px;
+  filter: sepia(18%);
+}
+
+.photo-logo {
+  margin: auto;
+  width: rem(48);
+  animation: fade-loader 1s ease infinite;
+}
+
+.photo-frame {
+  $frame-gap: calc(100% + #{$corner-size / 2} - 1px);
+  $frame-corner-gap: $corner-size;
+  $frame-dist: 28vmin;
+
+  @include round(4px);
+
+  position: absolute;
+  background-color: color('primary');
+  box-shadow: 0 0 4px color('primary');
+
+  &::before,
+  &::after {
+    @include round(100%);
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: color('primary');
+    animation: photo-frame 0.8s ease-out infinite;
+  }
+
+  &::before {
+    animation-delay: -0.3s;
+  }
+
+  &.--left {
+    --trans-y: #{$frame-dist};
+
+    top: $frame-corner-gap;
+    right: $frame-gap;
+  }
+
+  &.--right {
+    --trans-y: #{-$frame-dist};
+
+    bottom: $frame-corner-gap;
+    left: $frame-gap;
+  }
+
+  &.--top {
+    --trans-x: #{$frame-dist};
+
+    left: $frame-corner-gap;
+    bottom: $frame-gap;
+  }
+
+  &.--bottom {
+    --trans-x: #{-$frame-dist};
+
+    right: $frame-corner-gap;
+    top: $frame-gap;
+  }
+}
+
+.photo-name {
+  --name-gap: #{space(3)};
+
+  position: absolute;
+  bottom: var(--name-gap);
+  right: var(--name-gap);
+  color: color('primary');
+  font-size: font-size(3);
+  z-index: 3;
+  line-height: 2;
+  transition: clip-path 0.2s cubic-bezier(0, 0.56, 0.75, 0.75);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+  @include mobile {
+    --name-gap: #{space(2)};
+  }
+}

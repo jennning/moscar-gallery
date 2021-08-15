@@ -1,0 +1,16 @@
+<div class="photo-stage">
+  <img class="photo-logo" src="assets/images/logo.png" alt="M Oscar" />
+
+  <div class="photo-container" [@photoTransition]="photoTransitionState">
+    <img class="photo-image" [src]="activeImage?.src" alt="" />
+  </div>
+
+  <p class="photo-name" [@labelTransition]="photoTransitionState">
+    {{ activeImage?.name }}
+  </p>
+
+  <i class="photo-frame --left"></i>
+  <i class="photo-frame --top"></i>
+  <i class="photo-frame --right"></i>
+  <i class="photo-frame --bottom"></i>
+</div>

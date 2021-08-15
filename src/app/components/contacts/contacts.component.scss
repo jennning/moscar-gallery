@@ -1,0 +1,84 @@
+@import 'base';
+
+.contacts-header {
+  text-align: right;
+  margin-bottom: space(4);
+}
+
+.contacts-description {
+  font-size: font-size(2);
+}
+
+.contacts-content-container {
+  display: flex;
+  padding-inline: space(2);
+}
+
+.contacts-content {
+  margin: auto;
+  position: relative;
+  font-size: font-size(3);
+  padding: space(4);
+  border-radius: 4px;
+  background-color: color('white');
+  box-shadow: 2px 8px 12px color('primary900-t1'),
+    1px 1px 2px color('primary900-t1');
+}
+
+.contacts-address-title {
+  position: relative;
+  font-weight: bold;
+  font-size: font-size(5);
+  margin-bottom: space(2);
+  line-height: 1.2;
+}
+
+.contacts-address-title-note {
+  position: absolute;
+  bottom: calc(100% + #{space(1)});
+  right: 0;
+  font-size: font-size(1);
+  color: color('primary300');
+
+  @include mobile {
+    right: auto;
+    left: 0;
+  }
+}
+
+.contacts-address-subtitle {
+  font-size: font-size(2);
+  margin-bottom: space(2);
+}
+
+.contacts-address {
+  line-height: 1.6;
+  margin-bottom: space(3);
+}
+
+.contacts-address-time {
+  font-size: font-size(2);
+  margin-bottom: space(2);
+}
+
+.contacts-item {
+  display: flex;
+  align-items: center;
+  line-height: 2;
+  text-decoration: none;
+  color: color('primary600');
+}
+
+.contacts-item-icon {
+  @include square(rem(16));
+  color: color('primary600');
+  margin-right: space(1);
+}
+
+.contacts-logo {
+  position: absolute;
+  bottom: space(2);
+  right: space(2);
+  width: 2rem;
+  filter: brightness(0.5);
+}

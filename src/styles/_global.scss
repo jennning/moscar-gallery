@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+  --header-height: #{rem(64)};
+  --header-padding: #{space(4)};
+
+  text-rendering: optimizeLegibility;
+  letter-spacing: letter-spacing(0);
+  font-family: font-family(sans);
+
+  @include mobile {
+    --header-padding: #{space(2)};
+  }
+}
+
+body {
+  background-color: color('primary900');
+  color: color('white');
+}
+
+img {
+  max-width: 100%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+svg {
+  fill: currentColor;
+}
