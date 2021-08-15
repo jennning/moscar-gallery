@@ -1,4 +1,4 @@
-# M OScar Gallery
+# M Oscar Gallery
 
 A reimagination of a property brochure site.
 
