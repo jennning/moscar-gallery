@@ -33,6 +33,8 @@
   place-items: center;
 
   @include interact {
+    outline: none;
+
     .footer-scroller-indicator {
       opacity: 1;
     }
@@ -85,7 +87,7 @@
     position: absolute;
     left: calc(100% + #{space(1)});
     bottom: calc(100% + #{rem(8)});
-    animation: footer-scroller-indicator 0.8s ease infinite;
+    animation: move-pulse 0.8s ease infinite;
   }
 
   @media (hover: none) {

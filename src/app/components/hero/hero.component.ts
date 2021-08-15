@@ -2,10 +2,13 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  EventEmitter,
   HostBinding,
+  Output,
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
+import { ANCHORS } from 'src/app/types';
 
 @Component({
   selector: 'app-hero',
@@ -24,4 +27,13 @@ export class HeroComponent {
   imageContainer: ElementRef;
 
   title = 'JEWEL AMONGST THE STARS'.split(' ').map(x => [...x]);
+
+  @Output()
+  onGoDown = new EventEmitter<ANCHORS>();
+
+  goDown(e: Event) {
+    e.preventDefault();
+    (document.activeElement as any).blur();
+    this.onGoDown.emit(ANCHORS.CONCEPT);
+  }
 }

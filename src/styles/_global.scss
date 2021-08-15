@@ -36,3 +36,12 @@ strong {
 svg {
   fill: currentColor;
 }
+
+a,
+button {
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: 0 0 0 1px color('primary-t7');
+  }
+}

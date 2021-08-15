@@ -99,7 +99,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     this.stateMonitor$
       .pipe(
         throttleTime(400),
-        tap(state => !environment.production && console.log(`state: ${state}`)),
+        tap(state => !environment.production && console.log('state: ', state)),
         takeUntil(this.destroyed$)
       )
       .subscribe();

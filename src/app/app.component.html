@@ -4,7 +4,7 @@
 ></app-header>
 
 <main class="page-main" #top>
-  <app-hero id="home" #heroCmp></app-hero>
+  <app-hero id="home" #heroCmp (onGoDown)="scrollTo($event)"></app-hero>
 
   <div class="anchor app-gallery" id="concept" #concept>
     <app-gallery (activeImage)="setGalleryImage($event)"></app-gallery>

@@ -77,20 +77,16 @@
   color: color('primary');
   border: 0;
   display: flex;
-  width: rem(40);
+  padding: space(0);
   transform: rotate(-90deg);
-
-  &::after {
-    content: 'SCROLL';
-    position: absolute;
-    top: calc(100% + 4px);
-    left: 0;
-    width: 100%;
-    text-align: center;
-  }
+  cursor: pointer;
 
   @include interact {
     outline: none;
+
+    .hero-scroller-arrow {
+      opacity: 1;
+    }
   }
 }
 
@@ -98,6 +94,7 @@
   $shine-size: rem(40);
 
   @include round(4px);
+  @include no-interaction;
 
   position: absolute;
   top: -6px;
@@ -120,6 +117,30 @@
       transparent
     );
     animation: spin 4s linear infinite;
+  }
+}
+
+.hero-scroller-arrow {
+  $arrow-size: rem(6);
+
+  @include square($arrow-size);
+  @include no-interaction;
+
+  transform: rotate(-135deg);
+  position: absolute;
+  top: calc(100% + #{space(0)});
+  left: calc(50% - #{$arrow-size / 2});
+  transition: opacity 0.2s ease;
+  opacity: 0;
+
+  &::before {
+    @include full-abs;
+
+    content: '';
+    border-width: 2px 2px 0 0;
+    border-color: color('primary');
+    border-style: solid;
+    animation: move-pulse 0.8s ease infinite;
   }
 }
 
