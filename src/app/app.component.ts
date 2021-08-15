@@ -23,6 +23,7 @@ import {
   throttleTime
 } from 'rxjs/operators';
 import { ANCHORS, GalleryImage } from 'src/app/types';
+import { environment } from 'src/environments/environment';
 import { HeroComponent } from './components/hero/hero.component';
 
 interface AppComponentState {
@@ -98,7 +99,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     this.stateMonitor$
       .pipe(
         throttleTime(400),
-        tap(state => console.log(state)),
+        tap(state => !environment.production && console.log(`state: ${state}`)),
         takeUntil(this.destroyed$)
       )
       .subscribe();
