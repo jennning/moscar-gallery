@@ -126,7 +126,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
       max: 3000,
       min: 600
     };
-    const steps = 20;
+    const steps = 12;
     const transitionTiming = (t, b, c, d) => {
       t /= d / 2;
       if (t < 1) return (c / 2) * t * t + b;

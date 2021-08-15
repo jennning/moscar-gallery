@@ -4,10 +4,7 @@
 
 <section class="concept-features-section">
   <div class="concept-features">
-    <article
-      class="concept-feature"
-      *ngFor="let feature of features; trackBy: index"
-    >
+    <article class="concept-feature" *ngFor="let feature of features">
       <ng-container [ngSwitch]="feature.icon">
         <svg
           *ngSwitchCase="'field'"
