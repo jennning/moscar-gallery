@@ -13,8 +13,8 @@ Most assets are taken from the official website.
 
 Built with
 
-1. Angular (started with 11.2.13)
-2. Scully (started with 1.1.4)
+1. Angular (initial 11.2.13)
+2. Scully (initial 1.1.4)
 
 ## Development server
 
