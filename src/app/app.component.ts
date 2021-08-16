@@ -47,7 +47,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @HostBinding('style.--hero-progress')
   get progress() {
-    return this.state.heroScrollPos;
+    return isNaN(this.state.heroScrollPos) ? 0 : this.state.heroScrollPos;
   }
 
   @ViewChild('heroCmp', { static: true })

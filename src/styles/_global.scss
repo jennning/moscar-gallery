@@ -8,16 +8,9 @@
 }
 
 html {
-  --header-height: #{rem(64)};
-  --header-padding: #{space(4)};
-
   text-rendering: optimizeLegibility;
   letter-spacing: letter-spacing(0);
   font-family: font-family(sans);
-
-  @include mobile {
-    --header-padding: #{space(2)};
-  }
 }
 
 body {
@@ -43,5 +36,15 @@ button {
   &:active {
     outline: none;
     box-shadow: 0 0 0 1px color('primary-t7');
+  }
+}
+
+app-root {
+  --header-height: #{rem(64)};
+  --header-padding: #{space(4)};
+  --hero-progress: 0;
+
+  @include mobile {
+    --header-padding: #{space(2)};
   }
 }

@@ -41,7 +41,7 @@ yarn-error.log
 testem.log
 /typings
 scully.log
-/.scully
+.scully/*
 
 # System Files
 .DS_Store

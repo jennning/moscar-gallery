@@ -166,7 +166,7 @@
 
       @for $m from 1 through 7 {
         .hero-title-letter:nth-child(#{$m}) {
-          animation-delay: 0.26s * ($n * 4 + $m - 1);
+          animation-delay: 1s + 0.26s * ($n * 4 + $m - 1);
         }
       }
     }
