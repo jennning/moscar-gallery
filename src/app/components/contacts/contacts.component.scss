@@ -47,32 +47,39 @@
 }
 
 .contacts-address-subtitle {
-  font-size: font-size(2);
+  @include typography('tiny');
+
   margin-bottom: space(2);
 }
 
 .contacts-address {
-  line-height: 1.6;
-  margin-bottom: space(3);
+  margin-bottom: space(1);
 }
 
 .contacts-address-time {
   font-size: font-size(2);
-  margin-bottom: space(2);
 }
 
 .contacts-item {
-  display: flex;
-  align-items: center;
-  line-height: 2;
+  display: block;
   text-decoration: none;
   color: color('primary600');
+  position: relative;
+  padding-left: space(3);
+  line-height: 1.6;
+
+  & + & {
+    margin-top: space(2);
+  }
 }
 
 .contacts-item-icon {
   @include square(rem(16));
-  color: color('primary600');
+
   margin-right: space(1);
+  position: absolute;
+  top: space(0);
+  left: space(0);
 }
 
 .contacts-logo {

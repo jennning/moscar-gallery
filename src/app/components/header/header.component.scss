@@ -40,6 +40,7 @@
     )
     translateX(calc(var(--trans-x) - var(--hero-progress) * var(--trans-x)))
     translateY(calc(var(--trans-y) - var(--hero-progress) * var(--trans-y)));
+  will-change: transform;
 
   @include tablet {
     --trans-x: 2vmin;
@@ -74,7 +75,7 @@
     calc(var(--hero-progress) * var(--trans-x)),
     calc(var(--hero-progress) * 120px * -1)
   );
-  will-change: transform;
+  will-change: transform, opacity;
 }
 
 .header-logo-text-segment {

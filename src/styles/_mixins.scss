@@ -36,6 +36,7 @@
 
 @mixin typography($type) {
   @if $type == 'tiny' {
+    line-height: 1.4;
     text-transform: uppercase;
     font-size: font-size(1);
     letter-spacing: letter-spacing(1);
