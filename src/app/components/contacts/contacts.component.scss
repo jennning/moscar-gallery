@@ -23,6 +23,10 @@
   background-color: color('white');
   box-shadow: 2px 8px 12px color('primary900-t1'),
     1px 1px 2px color('primary900-t1');
+
+  @include mobile {
+    padding-left: space(2);
+  }
 }
 
 .contacts-address-title {
