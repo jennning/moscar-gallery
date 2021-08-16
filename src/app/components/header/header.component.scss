@@ -35,9 +35,7 @@
 
   width: rem(32);
   position: relative;
-  transform: scale(
-      calc(calc(1 + var(--scale)) - var(--hero-progress) * var(--scale))
-    )
+  transform: scale(calc(1 + var(--scale) - var(--hero-progress) * var(--scale)))
     translateX(calc(var(--trans-x) - var(--hero-progress) * var(--trans-x)))
     translateY(calc(var(--trans-y) - var(--hero-progress) * var(--trans-y)));
   will-change: transform;
