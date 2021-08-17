@@ -1,9 +1,10 @@
 <app-header
   (onGoTo)="scrollTo($event)"
   [isDisabled]="isScrolling$ | async"
+  [isFolded]="isOverATF$ | async"
 ></app-header>
 
-<main class="page-main" #top>
+<main class="page-main">
   <app-hero id="home" #heroCmp (onGoDown)="scrollTo($event)"></app-hero>
 
   <div class="anchor app-gallery" id="concept" #concept>

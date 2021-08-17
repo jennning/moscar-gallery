@@ -59,8 +59,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
   features: ElementRef;
   @ViewChild('developer')
   developer: ElementRef;
-  @ViewChild('top')
-  top: ElementRef;
 
   private readonly destroyed$ = new Subject();
 
@@ -91,6 +89,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
   get isScrolling$() {
     return this.state$.pipe(map(x => x.isScrolling));
+  }
+
+  get isOverATF$() {
+    return this.state$.pipe(map(x => x.heroScrollPos > 0.2));
   }
 
   constructor(private zone: NgZone, private cd: ChangeDetectorRef) {}
@@ -177,7 +179,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         filter(() => this.hero?.imageContainer.nativeElement),
         map(pos => pos / this.hero.imageContainer.nativeElement.offsetHeight),
         map(pos => Math.min(pos, 1)),
-        distinctUntilChanged(),
         tap(heroScrollPos =>
           requestAnimationFrame(() => (this.state = { heroScrollPos }))
         ),

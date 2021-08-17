@@ -19,6 +19,10 @@ $image-count: 32;
   );
   animation: gallery-move 36s linear infinite;
   will-change: transform;
+
+  @include mobile {
+    --image-size: 36vmin;
+  }
 }
 
 .gallery-item {
@@ -91,12 +95,18 @@ $image-count: 32;
 }
 
 .gallery-name {
+  @include typography('tiny');
+
   color: color('primary');
   position: absolute;
   bottom: space(1);
   right: space(1);
   z-index: 3;
-  font-size: font-size(1);
+  text-align: right;
+  width: calc(100% - #{space(2)});
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .gallery-image-loader {

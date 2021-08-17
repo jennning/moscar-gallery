@@ -35,9 +35,9 @@
 
   width: rem(32);
   position: relative;
-  transform: scale(calc(1 + var(--scale) - var(--hero-progress) * var(--scale)))
-    translateX(calc(var(--trans-x) - var(--hero-progress) * var(--trans-x)))
-    translateY(calc(var(--trans-y) - var(--hero-progress) * var(--trans-y)));
+  transform: scale(calc(1 + var(--scale))) translateX(var(--trans-x))
+    translateY(var(--trans-y));
+  transition: transform 0.6s cubic-bezier(0.22, 0.12, 0, 0.99);
   will-change: transform;
 
   @include tablet {
@@ -50,40 +50,52 @@
     --trans-x: 8vmin;
     --trans-y: 12vmin;
   }
+
+  &.--folded {
+    transition-duration: 0.8s;
+    transform: none;
+
+    .header-logo-text {
+      opacity: 0;
+      transition-duration: 0.24s;
+      transition-delay: 0s;
+      transform: translateY(20%);
+    }
+  }
 }
 
 .header-logo {
   width: 100%;
   object-fit: contain;
-  animation: logo-reveal 0.8s cubic-bezier(0.49, 0.26, 0, 1.2);
+  animation: logo-reveal 0.6s cubic-bezier(0.49, 0.26, 0, 1.2);
 }
 
-// .header-logo-text {
-//   position: absolute;
-//   top: calc(100% + 1vmin);
-//   left: 0;
-//   padding-left: 1vmin;
-//   font-size: calc(#{font-size(1)} / var(--scale));
-//   white-space: nowrap;
-//   line-height: 1.6;
-//   color: color('white');
-//   text-shadow: 1px 1px 2px color('primary900');
-//   opacity: calc(1 - var(--hero-progress) * 5);
-//   transform: translate(
-//     calc(var(--hero-progress) * var(--trans-x)),
-//     calc(var(--hero-progress) * 120px * -1)
-//   );
-//   will-change: transform, opacity;
-// }
+.header-logo-text {
+  position: absolute;
+  top: calc(100% + 1vmin);
+  left: 0;
+  padding-left: 1vmin;
+  font-size: calc(#{font-size(1)} / var(--scale));
+  white-space: nowrap;
+  line-height: 1.6;
+  color: color('white');
+  text-shadow: 1px 1px 2px color('primary900');
+  opacity: 1;
+  transition: opacity cubic-bezier(0.35, 0.67, 0.62, 0.96),
+    transform cubic-bezier(0.35, 0.67, 0.62, 0.96);
+  transition-delay: 0.3s;
+  transition-duration: 0.6s;
+  will-change: transform, opacity;
+}
 
-// .header-logo-text-segment {
-//   opacity: 0;
-//   animation: fade-in-up 0.3s cubic-bezier(0.35, 0.67, 0.62, 0.96) 0.4s forwards;
+.header-logo-text-segment {
+  opacity: 0;
+  animation: fade-in-up 0.3s cubic-bezier(0.35, 0.67, 0.62, 0.96) 0.4s forwards;
 
-//   &:nth-child(2) {
-//     animation-delay: 0.5s;
-//   }
-// }
+  &:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+}
 
 .header-nav {
   position: relative;

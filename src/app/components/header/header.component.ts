@@ -25,6 +25,9 @@ export class HeaderComponent {
   @Input()
   isDisabled = false;
 
+  @Input()
+  isFolded = false;
+
   @Output()
   onGoTo = new EventEmitter<ANCHORS>();
 

@@ -12,6 +12,5 @@ export enum ANIM_STATE {
 export enum ANCHORS {
   CONCEPT = 'concept',
   FEATURES = 'features',
-  DEVELOPER = 'developer',
-  TOP = 'top'
+  DEVELOPER = 'developer'
 }

@@ -53,6 +53,6 @@ export class FooterComponent {
   goTop(e: Event) {
     e.preventDefault();
     (document.activeElement as any).blur();
-    this.onGoTop.emit(ANCHORS.TOP);
+    this.onGoTop.emit(ANCHORS.CONCEPT);
   }
 }
