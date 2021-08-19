@@ -18,21 +18,23 @@
 </div>
 
 <div class="hero-image-container" #imageContainer>
-  <img
-    class="hero-image --facade"
-    src="assets/images/hero/hero-facade.png"
-    alt=""
-  />
-  <img
-    class="hero-image --tower"
-    src="assets/images/hero/hero-tower.png"
-    alt=""
-  />
-  <img
-    class="hero-image --background"
-    src="assets/images/hero/hero-background.png"
-    alt=""
-  />
+  <picture class="hero-image --{{ image }}" *ngFor="let image of heroImages">
+    <source
+      class="hero-image-src"
+      srcset="assets/images/hero/hero-{{ image }}.webp"
+      type="image/webp"
+    />
+    <source
+      class="hero-image-src"
+      srcset="assets/images/hero/hero-{{ image }}.png"
+      type="image/png"
+    />
+    <img
+      class="hero-image-src"
+      src="assets/images/hero/hero-{{ image }}.png"
+      [alt]="image"
+    />
+  </picture>
 </div>
 
 <button class="hero-scroller" (click)="goDown($event)">

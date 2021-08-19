@@ -25,7 +25,7 @@
 }
 
 .subtitle {
-  --subtitle-shine: #{transparentize(color('white'), 0.3)};
+  --subtitle-shine: #{color('white-t7')};
 
   font-size: font-size(7);
   font-family: font-family(serif);
@@ -34,7 +34,7 @@
   text-shadow: 0 0 4px var(--subtitle-shine);
 
   &.--dark {
-    --subtitle-shine: #{transparentize(color('primary300'), 0.3)};
+    --subtitle-shine: #{color('primary300-t7')};
 
     font-weight: bold;
     color: color('primary600');

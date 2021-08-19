@@ -40,9 +40,7 @@
   @include no-interaction;
   @include full-abs;
 
-  object-fit: cover;
   will-change: transform;
-  filter: sepia(12%);
 
   &.--facade {
     transform-origin: bottom;
@@ -59,6 +57,13 @@
     z-index: 0;
     transform: translateY(calc(var(--hero-progress) * 14%));
   }
+}
+
+.hero-image-src {
+  @include full-abs;
+
+  object-fit: cover;
+  filter: sepia(12%);
 }
 
 .hero-scroller {

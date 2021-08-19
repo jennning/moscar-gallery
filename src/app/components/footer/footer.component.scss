@@ -67,7 +67,7 @@
     left: 0;
     background-image: radial-gradient(
       circle at left center,
-      transparentize(color('white'), 0.6),
+      color('white-t4'),
       transparent 80%
     );
     transform: rotate(-45deg) translateX(25%) translateY(-35%);

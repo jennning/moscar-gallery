@@ -42,7 +42,7 @@
   background-image: linear-gradient(
     to bottom,
     color('primary300'),
-    transparentize(color('primary300'), 0.9)
+    color('primary300-t1') 60%
   );
 
   &::before {
@@ -65,6 +65,7 @@
   display: block;
   width: rem(160);
   margin: auto;
+  filter: drop-shadow(0 0 2px color('primary-t7'));
 }
 
 .awards-deco {

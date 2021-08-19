@@ -259,8 +259,9 @@
   @include typography('tiny');
 
   position: absolute;
-  bottom: 4vmax;
-  left: calc(var(--image-text-gap) + #{space(2)});
+  grid-area: i;
+  top: calc(100% + #{space(0)});
+  left: 0;
   color: color('primary');
   padding-left: calc(var(--icon-width) + #{space(1)});
 
@@ -433,17 +434,22 @@
   position: relative;
   font-size: font-size(2);
   line-height: 1.6;
-  padding-left: calc(#{space(1)} + #{$icon-size});
+  display: grid;
+  grid-template-columns: $icon-size 1fr;
+  grid-gap: space(1);
+  place-items: center;
 
   &::before {
     @include round($icon-size);
 
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+    flex-shrink: 0;
     background-color: var(--label-color);
     border: 2px solid color('white');
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
   }
 }
 

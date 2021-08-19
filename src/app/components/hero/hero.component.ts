@@ -28,6 +28,8 @@ export class HeroComponent {
 
   title = 'JEWEL AMONGST THE STARS'.split(' ').map(x => [...x]);
 
+  heroImages = ['facade', 'tower', 'background'];
+
   @Output()
   onGoDown = new EventEmitter<ANCHORS>();
 
