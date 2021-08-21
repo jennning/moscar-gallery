@@ -1,13 +1,12 @@
 # M Oscar Gallery
 
 A reimagination of a property brochure site.
+Live website: https://moscargallery.com/
 
 The subject is Mahsing's M Oscar.
 
-Official website:
+Most assets are taken from the Mahsing's official M Oscar website:
 https://www.mahsing.com.my/m-oscar/
-
-Most assets are taken from the official website.
 
 ## Project dependencies
 
