@@ -5,7 +5,7 @@ Live website: https://moscargallery.com/
 
 The subject is Mahsing's M Oscar.
 
-Most assets are taken from the Mahsing's official M Oscar website:  
+Most assets are taken from Mahsing's official M Oscar website:  
 https://www.mahsing.com.my/m-oscar/
 
 ## Project dependencies
