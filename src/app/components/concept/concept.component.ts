@@ -33,7 +33,7 @@ export class ConceptComponent {
     },
     {
       icon: 'car',
-      name: '2 to 4 car parks per Unit'
+      name: '2 to 4 car parks per unit'
     }
   ];
 

@@ -438,6 +438,8 @@
   grid-template-columns: $icon-size 1fr;
   grid-gap: space(1);
   place-items: center;
+  text-align: center;
+  white-space: nowrap;
 
   &::before {
     @include round($icon-size);
