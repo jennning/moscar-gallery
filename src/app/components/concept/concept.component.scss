@@ -122,7 +122,7 @@
     's x-3 w';
 
   @include tablet {
-    grid-template-columns: repeat(4, $idea-col / 2);
+    grid-template-columns: repeat(4, calc(#{$idea-col} / 2));
     grid-template-areas:
       'x-1 c c x-2'
       's s w w';
