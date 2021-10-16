@@ -33,14 +33,15 @@
 .plans-facility-content {
   display: flex;
   justify-content: center;
+  align-items: center;
 
   @include tablet {
     flex-direction: column;
-    align-items: center;
   }
 }
 
 .plans-facility-map-container {
+  position: relative;
   width: 28vmax;
   margin-right: space(6);
 
@@ -82,7 +83,7 @@
   line-height: rem(20);
 
   &::before {
-    @include round(rem(20));
+    @include round(calc(#{rem(16)} + 4px));
 
     content: counter(facility-list);
     position: absolute;
@@ -93,6 +94,152 @@
     line-height: rem(16);
     border: 2px solid color('primary');
   }
+}
+
+.plans-facility-preview {
+  --preview-size: 1.4vw;
+
+  position: absolute;
+  width: var(--preview-size);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  top: calc(var(--y, 0) * 1%);
+  left: calc(var(--x, 0) * 1%);
+  cursor: pointer;
+
+  &::before {
+    @include full-abs;
+
+    content: '';
+    border-radius: 50%;
+    background-color: color('white-t7');
+    animation: ripple-pulse 2s ease infinite;
+  }
+
+  &:hover {
+    .plans-facility-preview-content {
+      transition-delay: 0.1s;
+      transform: none;
+      opacity: 1;
+    }
+
+    .plans-facility-preview-title {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      transition-delay: 0.2s;
+    }
+  }
+
+  @for $n from 1 through 3 {
+    &:nth-child(#{$n}n)::before {
+      animation-delay: -0.28s * $n;
+    }
+  }
+
+  @include tablet {
+    --preview-size: 3vw;
+  }
+
+  @include mobile {
+    --preview-size: 5vw;
+  }
+}
+
+.plans-facility-preview-content {
+  @include no-interaction;
+
+  position: absolute;
+  top: calc(100% + #{space(1)});
+  left: calc(100% + #{space(1)});
+  width: 30vmin;
+  display: flex;
+  border-radius: 4px;
+  transition: transform 0.16s ease, opacity 0.24s ease;
+  transition-delay: 0.1s;
+  transform: scale(0.9) translateY(-#{rem(8)});
+  transform-origin: top left;
+  opacity: 0;
+  background-color: color('primary600');
+  z-index: 2;
+  box-shadow: 0 0 8px #{color('primary900-t4')},
+    0 0 24px #{color('primary900-t6')};
+
+  @include tablet {
+    width: 50vmin;
+    position: fixed;
+    top: calc(50% - 25vmin);
+    left: calc(50% - 25vmin);
+  }
+
+  @include tablet {
+    width: 80vmin;
+    top: calc(50% - 40vmin);
+    left: calc(50% - 40vmin);
+  }
+}
+
+.plans-facility-preview-loader {
+  position: absolute;
+  width: 3.6vmin;
+  top: calc(50% - 2.2vmin);
+  left: calc(50% - 1.8vmin);
+  animation: fade-loader 1s ease infinite;
+  will-change: opacity;
+  z-index: 0;
+}
+
+.plans-facility-preview-title {
+  font-size: font-size(2);
+  position: absolute;
+  bottom: space(2);
+  right: space(2);
+  z-index: 2;
+  line-height: 2;
+  letter-spacing: letter-spacing(1);
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition: clip-path 0.2s cubic-bezier(0.16, 0.09, 0, 0.91);
+}
+
+.plans-facility-preview-id {
+  @include round(calc(#{rem(16)} + 4px));
+
+  display: block;
+  border-radius: 50%;
+  border: 2px solid color('primary');
+  font-size: font-size(1);
+  line-height: rem(16);
+  text-align: center;
+  position: absolute;
+  top: space(2);
+  left: space(2);
+  z-index: 2;
+  background-color: color('primary900-t6');
+}
+
+.plans-facility-preview-image-container {
+  position: relative;
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    background-image: linear-gradient(
+      350deg,
+      #{color('primary900')},
+      transparent 60%
+    );
+  }
+}
+
+.plans-facility-preview-image {
+  filter: sepia(30%);
 }
 
 .plans-unit-header {

@@ -23,7 +23,8 @@
     'white': $white,
     'white-t1': transparentize($white, 0.9),
     'white-t4': transparentize($white, 0.6),
-    'white-t7': transparentize($white, 0.3)
+    'white-t7': transparentize($white, 0.3),
+    'transparent': rgba(255, 255, 255, 0)
   );
 
   @return map-get($color, $key);

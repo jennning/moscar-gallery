@@ -17,6 +17,35 @@
         alt="facilities-plan"
         class="plans-facility-map"
       />
+
+      <div
+        *ngFor="let preview of facilityPreviews"
+        class="plans-facility-preview"
+        [style.--x]="preview.x"
+        [style.--y]="preview.y"
+      >
+        <div class="plans-facility-preview-content">
+          <i class="plans-facility-preview-id">{{ preview.id }}</i>
+
+          <p class="plans-facility-preview-title">
+            {{ preview.name }}
+          </p>
+
+          <figure class="plans-facility-preview-image-container">
+            <img
+              [src]="preview.src"
+              alt=""
+              class="plans-facility-preview-image"
+            />
+          </figure>
+
+          <img
+            class="plans-facility-preview-loader"
+            src="assets/images/logo.png"
+            alt=""
+          />
+        </div>
+      </div>
     </figure>
 
     <ol class="plans-facility-list">
