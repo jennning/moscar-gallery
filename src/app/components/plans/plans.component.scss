@@ -598,6 +598,7 @@
   animation: spin 3s linear infinite;
   opacity: 0;
   transition: opacity 0.2s ease;
+  pointer-events: none;
 
   &::before {
     content: '';
