@@ -68,7 +68,7 @@
     background-image: radial-gradient(
       circle at left center,
       color('white-t4'),
-      transparent 80%
+      color('transparent') 80%
     );
     transform: rotate(-45deg) translateX(25%) translateY(-35%);
     clip-path: polygon(0% 0%, 65% 0%, 100% 50%, 65% 100%, 0% 100%);

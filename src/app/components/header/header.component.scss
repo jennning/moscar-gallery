@@ -21,7 +21,7 @@
     background-image: linear-gradient(
       to right,
       #{color('primary900')},
-      transparent
+      color('transparent')
     );
   }
 }
@@ -123,7 +123,7 @@
   border-radius: 4px;
   transition: background-color 0.2s ease;
   color: color('primary');
-  background-color: transparent;
+  background-color: color('transparent');
   border: 0;
   cursor: pointer;
   user-select: none;

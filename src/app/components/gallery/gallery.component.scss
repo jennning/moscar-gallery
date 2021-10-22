@@ -80,7 +80,7 @@ $image-count: 32;
     background-image: linear-gradient(
       350deg,
       #{color('primary900')},
-      transparent 60%
+      color('transparent') 60%
     );
   }
 }

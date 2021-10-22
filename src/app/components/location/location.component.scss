@@ -113,9 +113,9 @@
     left: calc(50% - #{$bar-size / 2});
     background-image: linear-gradient(
       to right,
-      transparent,
+      color('transparent'),
       color('white-t1'),
-      transparent
+      color('transparent')
     );
   }
 
@@ -158,7 +158,11 @@
     right: 2px;
     width: $split-size;
     height: 2px;
-    background-image: linear-gradient(to left, color('white-t1'), transparent);
+    background-image: linear-gradient(
+      to left,
+      color('white-t1'),
+      color('transparent')
+    );
   }
 
   &::after {
@@ -170,9 +174,9 @@
     right: 1px;
     background-image: linear-gradient(
       to bottom,
-      transparent,
+      color('transparent'),
       color('white-t1'),
-      transparent
+      color('transparent')
     );
   }
 
@@ -214,7 +218,7 @@
     background-image: linear-gradient(
       to left,
       color('primary600'),
-      transparent
+      color('transparent')
     );
   }
 }

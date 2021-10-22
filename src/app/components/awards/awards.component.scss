@@ -54,9 +54,9 @@
     width: 80%;
     background-image: linear-gradient(
       to right,
-      transparent,
+      color('transparent'),
       color('white'),
-      transparent
+      color('transparent')
     );
   }
 }
@@ -96,9 +96,9 @@
     left: calc(50% - #{rem(2)});
     background-image: linear-gradient(
       to bottom,
-      transparent,
+      color('transparent'),
       color('white-t1'),
-      transparent
+      color('transparent')
     );
     animation: spin 1s linear infinite;
   }

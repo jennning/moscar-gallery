@@ -23,9 +23,9 @@
     top: 0;
     background-image: linear-gradient(
       to right,
-      transparent,
+      color('transparent'),
       color('primary300'),
-      transparent
+      color('transparent')
     );
   }
 
@@ -147,7 +147,7 @@
     background-image: linear-gradient(
       350deg,
       #{color('primary900')},
-      transparent 40%
+      color('transparent') 40%
     );
     border-radius: 4px;
     opacity: 0;

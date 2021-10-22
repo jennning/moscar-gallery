@@ -65,9 +65,9 @@
       right: calc(100% + var(--feature-gap) / 2 - 1px);
       background-image: linear-gradient(
         to bottom,
-        transparent,
+        color('transparent'),
         color('primary-t1'),
-        transparent
+        color('transparent')
       );
     }
   }
@@ -200,9 +200,9 @@
     height: 2px;
     background-image: linear-gradient(
       to right,
-      transparent,
+      color('transparent'),
       color('primary-t1'),
-      transparent
+      color('transparent')
     );
   }
 
@@ -213,9 +213,9 @@
     width: 2px;
     background-image: linear-gradient(
       to bottom,
-      transparent,
+      color('transparent'),
       color('primary-t1'),
-      transparent
+      color('transparent')
     );
   }
 
