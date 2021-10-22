@@ -260,6 +260,49 @@
 }
 
 .plans-unit {
+  --image-text-gap: #{space(3)};
+  --image-size: 24vmax;
+  --image-size-factor: 1;
+
+  display: grid;
+  grid-gap: space(1) space(4);
+  grid-template-columns: calc(var(--image-size) * var(--image-size-factor)) rem(
+      160
+    );
+  grid-template-areas:
+    'f i'
+    'c i';
+
+  &.--B {
+    --image-size: 26vmax;
+  }
+
+  &.--C {
+    --image-size: 30vmax;
+  }
+
+  &.--D {
+    --image-size: 32vmax;
+  }
+
+  @include tablet {
+    --image-size-factor: 1.3;
+  }
+
+  @include mobile {
+    --image-size-factor: 1.6;
+  }
+
+  & + & {
+    margin-top: space(6);
+  }
+
+  &:nth-child(even) {
+    margin-left: auto;
+  }
+}
+
+.plans-unit-main {
   display: flex;
   max-width: 100%;
 
@@ -284,17 +327,8 @@
 }
 
 .plans-unit-image-container {
-  --image-text-gap: #{space(3)};
-  --image-size: 24vmax;
-  --image-size-factor: 1;
-
+  grid-area: f;
   position: relative;
-  width: clamp(
-    var(--image-size),
-    calc(var(--image-size) * var(--image-size-factor)),
-    100%
-  );
-  margin-right: space(4);
   display: grid;
   grid-gap: space(2);
   grid-template-columns: var(--image-text-gap) 1fr;
@@ -303,26 +337,6 @@
     's-tl w'
     'h i'
     's-bl e';
-
-  &.--B {
-    --image-size: 26vmax;
-  }
-
-  &.--C {
-    --image-size: 30vmax;
-  }
-
-  &.--D {
-    --image-size: 32vmax;
-  }
-
-  @include tablet {
-    --image-size-factor: 1.3;
-  }
-
-  @include mobile {
-    --image-size-factor: 1.6;
-  }
 }
 
 .plans-unit-image {
@@ -425,7 +439,7 @@
 }
 
 .plans-unit-content {
-  flex-basis: rem(160);
+  grid-area: i;
 }
 
 .plans-unit-type {
@@ -517,6 +531,106 @@
 .plans-unit-info-label {
   font-size: font-size(4);
   font-weight: bold;
+}
+
+.plans-unit-concepts {
+  position: relative;
+  grid-area: c;
+  display: flex;
+  justify-content: center;
+  margin-left: var(--image-text-gap);
+}
+
+.plans-unit-concept-item {
+  & + & {
+    margin-left: space(3);
+  }
+
+  &:hover {
+    .plans-unit-concept-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    .plans-unit-concept-description {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      transition-delay: 0.2s;
+    }
+  }
+}
+
+.plans-unit-concept-thumbnail {
+  position: relative;
+  width: rem(48);
+  aspect-ratio: 1/1;
+  cursor: pointer;
+
+  &::before {
+    @include round(calc(100% + #{space(1)}));
+
+    content: '';
+    position: absolute;
+    top: -#{space(0)};
+    left: -#{space(0)};
+    border: 2px solid color('primary');
+  }
+}
+
+.plans-unit-concept-thumbnail-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.plans-unit-concept-view {
+  position: absolute;
+  width: calc(100% - #{space(2)});
+  bottom: calc(100% + #{space(3)});
+  left: space(1);
+  z-index: 1;
+  transition: transform 0.16s ease, opacity 0.24s ease;
+  transition-delay: 0.1s;
+  transform: translateY(#{rem(8)});
+  transform-origin: bottom;
+  opacity: 0;
+  background-color: color('primary600');
+  pointer-events: none;
+  box-shadow: 0 0 8px #{color('primary900-t4')},
+    0 0 24px #{color('primary900-t6')}, 0 12px 12px #{color('primary900-t6')};
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    background-image: linear-gradient(
+      350deg,
+      #{color('primary900')},
+      transparent 60%
+    );
+  }
+}
+
+.plans-unit-concept-view-image {
+  filter: sepia(30%);
+  border-radius: 4px;
+}
+
+.plans-unit-concept-description {
+  font-size: font-size(2);
+  position: absolute;
+  bottom: space(2);
+  right: space(2);
+  z-index: 2;
+  line-height: 2;
+  letter-spacing: letter-spacing(1);
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition: clip-path 0.2s cubic-bezier(0.16, 0.09, 0, 0.91);
 }
 
 .plans-master-header {

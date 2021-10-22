@@ -63,8 +63,8 @@
   </header>
 
   <div class="plans-units">
-    <article class="plans-unit" *ngFor="let unit of units">
-      <figure class="plans-unit-image-container --{{ unit.id }}">
+    <article class="plans-unit --{{ unit.id }}" *ngFor="let unit of units">
+      <figure class="plans-unit-image-container">
         <img
           src="assets/images/units/floorplan-unit-{{ unit.id }}.png"
           [alt]="unit.id"
@@ -134,6 +134,32 @@
           </li>
         </ul>
       </div>
+
+      <ul class="plans-unit-concepts">
+        <li
+          class="plans-unit-concept-item"
+          *ngFor="let concept of unit.concepts"
+        >
+          <div class="plans-unit-concept-thumbnail">
+            <img
+              [src]="concept.src"
+              alt=""
+              class="plans-unit-concept-thumbnail-image"
+            />
+          </div>
+
+          <article class="plans-unit-concept-view">
+            <img
+              [src]="concept.src"
+              alt=""
+              class="plans-unit-concept-view-image"
+            />
+            <p class="plans-unit-concept-description">
+              {{ concept.description }}
+            </p>
+          </article>
+        </li>
+      </ul>
     </article>
   </div>
 </section>
