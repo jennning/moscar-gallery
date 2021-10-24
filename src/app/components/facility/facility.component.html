@@ -1,0 +1,45 @@
+<header class="facility-header">
+  <h3 class="facility-title subtitle">35 FACILITIES</h3>
+  <p class="section-description">Facility Podium located at 7th floor</p>
+</header>
+
+<div class="facility-content">
+  <figure class="facility-map-container">
+    <img
+      src="assets/images/maps/facility-plan.png"
+      alt="facilities-plan"
+      class="facility-map"
+    />
+
+    <div
+      *ngFor="let preview of facilityPreviews"
+      class="facility-preview"
+      [style.--x]="preview.x"
+      [style.--y]="preview.y"
+    >
+      <div class="facility-preview-content">
+        <i class="facility-preview-id">{{ preview.id }}</i>
+
+        <p class="facility-preview-title">
+          {{ preview.name }}
+        </p>
+
+        <figure class="facility-preview-image-container">
+          <img [src]="preview.src" alt="" class="facility-preview-image" />
+        </figure>
+
+        <img
+          class="facility-preview-loader"
+          src="assets/images/logo.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </figure>
+
+  <ol class="facility-list">
+    <li class="facility" *ngFor="let facility of facilities">
+      {{ facility }}
+    </li>
+  </ol>
+</div>

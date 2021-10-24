@@ -42,6 +42,7 @@
 }
 
 .container {
+  display: block;
   width: clamp(#{rem(300)}, 100%, #{rem(1200)});
   margin: auto;
   padding-inline: space(2);

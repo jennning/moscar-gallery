@@ -17,6 +17,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AwardsComponent } from './components/awards/awards.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { CreditComponent } from './components/credit/credit.component';
+import { FacilityComponent } from './components/facility/facility.component';
+import { UnitComponent } from './components/unit/unit.component';
+import { MasterPlanComponent } from './components/master-plan/master-plan.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { CreditComponent } from './components/credit/credit.component';
     FooterComponent,
     AwardsComponent,
     ContactsComponent,
-    CreditComponent
+    CreditComponent,
+    FacilityComponent,
+    UnitComponent,
+    MasterPlanComponent
   ],
   imports: [
     BrowserModule,

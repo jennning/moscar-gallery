@@ -1,0 +1,40 @@
+<header class="master-header">
+  <h3 class="section-title subtitle">2 TOWERS</h3>
+  <p class="section-description">North & South towers, 39 floors, 910 units</p>
+</header>
+
+<div class="master-content">
+  <div class="master-map-container">
+    <img
+      src="assets/images/maps/master-plan.png"
+      alt="M Oscar master plan"
+      class="master-map"
+    />
+
+    <img
+      src="assets/images/maps/master-plan-compass.png"
+      alt="compass"
+      class="master-map-compass"
+    />
+
+    <ul class="master-map-labels">
+      <li
+        class="master-map-label"
+        [style.--label-color]="label.color"
+        *ngFor="let label of masterLabels"
+      >
+        Type {{ label.id }}
+      </li>
+    </ul>
+
+    <div class="master-map-note --north">
+      <p class="master-map-note-title">NORTH TOWER</p>
+      <p class="master-map-note-subtitle">Facing Kuala Lumpur</p>
+    </div>
+
+    <div class="master-map-note --south">
+      <p class="master-map-note-title">SOUTH TOWER</p>
+      <p class="master-map-note-subtitle">Facing Sri Petaling</p>
+    </div>
+  </div>
+</div>

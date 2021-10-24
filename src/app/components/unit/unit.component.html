@@ -1,0 +1,97 @@
+<header class="unit-header">
+  <h3 class="section-title subtitle">4 UNIT TYPES</h3>
+  <p class="section-description">708 sf. to 1198 sf.</p>
+</header>
+
+<div class="units">
+  <article class="unit --{{ unit.id }}" *ngFor="let unit of units">
+    <figure class="unit-image-container">
+      <img
+        src="assets/images/units/floorplan-unit-{{ unit.id }}.png"
+        [alt]="unit.id"
+        class="unit-image"
+        title="M Oscar unit {{ unit.id }}"
+      />
+
+      <div class="unit-image-text --width">
+        <p class="unit-image-text-value">{{ unit.width }} mm</p>
+      </div>
+      <div class="unit-image-text --height">
+        <p class="unit-image-text-value">{{ unit.height }} mm</p>
+      </div>
+      <p class="unit-exclusive" *ngIf="unit.exclusive">
+        {{ unit.exclusive }}
+      </p>
+      <p class="unit-breakable" *ngIf="unit.breakable">Breakable wall</p>
+    </figure>
+
+    <div class="unit-content">
+      <h3 class="unit-type">{{ unit.id }}</h3>
+
+      <ul class="unit-info">
+        <li class="unit-info-item">
+          <p class="unit-size">
+            {{ unit.size }}
+          </p>
+
+          <p class="unit-dualkey" *ngIf="unit.dualKey">Dual key</p>
+        </li>
+
+        <li class="unit-info-item">
+          <svg
+            class="unit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M496 344h-8v-64a32.042 32.042 0 00-32-32V112a32.042 32.042 0 00-32-32H88a32.042 32.042 0 00-32 32v136a32.042 32.042 0 00-32 32v64h-8a8 8 0 00-8 8v32a8 8 0 008 8h8v32a8 8 0 008 8h24a7.99 7.99 0 007.84-6.43L70.56 392h370.88l6.72 33.57A7.99 7.99 0 00456 432h24a8 8 0 008-8v-32h8a8 8 0 008-8v-32a8 8 0 00-8-8zM72 112a16.021 16.021 0 0116-16h336a16.021 16.021 0 0116 16v136h-16v-32a32.042 32.042 0 00-32-32h-96a32.042 32.042 0 00-32 32v32h-16v-32a32.042 32.042 0 00-32-32h-96a32.042 32.042 0 00-32 32v32H72zm336 104v32H280v-32a16.021 16.021 0 0116-16h96a16.021 16.021 0 0116 16zm-176 0v32H104v-32a16.021 16.021 0 0116-16h96a16.021 16.021 0 0116 16zM40 280a16.021 16.021 0 0116-16h400a16.021 16.021 0 0116 16v64H40zm9.44 136H40v-24h14.24zM472 416h-9.44l-4.8-24H472zm16-40H24v-16h464z"
+            />
+          </svg>
+
+          <p class="unit-info-label">
+            {{ unit.bedrooms }}
+          </p>
+        </li>
+
+        <li class="unit-info-item">
+          <svg
+            class="unit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M496 256H96v-16a8 8 0 00-8-8h-8v-24h16v8a8 8 0 0016 0v-32a8 8 0 00-16 0v8H80V96a32.03 32.03 0 0132-32h32a32.03 32.03 0 0132 32v.68A48.069 48.069 0 00136 144a8 8 0 008 8h80a8 8 0 008-8 48.069 48.069 0 00-40-47.32V96a48.051 48.051 0 00-48-48h-32a48.051 48.051 0 00-48 48v136h-8a8 8 0 00-8 8v16H16a8 8 0 00-8 8v24a8 8 0 008 8h24v96a48.069 48.069 0 0040 47.32V456a8 8 0 0016 0v-16h320v16a8 8 0 0016 0v-16.68A48.069 48.069 0 00472 392v-96h24a8 8 0 008-8v-24a8 8 0 00-8-8zM184 112a32.058 32.058 0 0130.99 24h-61.98A32.058 32.058 0 01184 112zM64 248h16v8H64zm392 144a32.03 32.03 0 01-32 32H88a32.03 32.03 0 01-32-32v-96h400zm32-112H24v-8h464z"
+            />
+            <path
+              d="M80 328h64a8 8 0 000-16H80a8 8 0 000 16zM168 328h8a8 8 0 000-16h-8a8 8 0 000 16z"
+            />
+          </svg>
+
+          <p class="unit-info-label">
+            {{ unit.bathrooms }}
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="unit-concepts">
+      <li class="unit-concept-item" *ngFor="let concept of unit.concepts">
+        <div class="unit-concept-thumbnail">
+          <img
+            [src]="concept.src"
+            alt=""
+            class="unit-concept-thumbnail-image"
+          />
+          <i class="unit-concept-thumbnail-decorator"></i>
+        </div>
+
+        <article class="unit-concept-view">
+          <img [src]="concept.src" alt="" class="unit-concept-view-image" />
+          <p class="unit-concept-description">
+            {{ concept.description }}
+          </p>
+        </article>
+      </li>
+    </ul>
+  </article>
+</div>
