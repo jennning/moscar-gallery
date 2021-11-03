@@ -75,7 +75,7 @@
 
   position: absolute;
   width: var(--preview-size);
-  aspect-ratio: 1/1;
+  height: var(--preview-size);
   border-radius: 50%;
   top: calc(var(--y, 0) * 1%);
   left: calc(var(--x, 0) * 1%);

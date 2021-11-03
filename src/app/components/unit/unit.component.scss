@@ -49,6 +49,12 @@
 
   @include mobile {
     --image-size-factor: 1.6;
+
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'f'
+      'i'
+      'c';
   }
 
   & + & {
@@ -211,9 +217,9 @@
   position: relative;
   padding: space(2) space(1);
   width: $type-size;
+  height: $type-size;
   line-height: calc(#{$type-size} - #{space(2)} * 2);
   margin: auto;
-  aspect-ratio: 1/1;
 
   @include corners;
 }
@@ -297,6 +303,10 @@
   display: flex;
   justify-content: center;
   margin-left: var(--image-text-gap);
+
+  @include mobile {
+    margin-left: 0;
+  }
 }
 
 .unit-concept-item {
@@ -328,7 +338,7 @@
 .unit-concept-thumbnail {
   position: relative;
   width: rem(48);
-  aspect-ratio: 1/1;
+  height: rem(48);
   cursor: pointer;
   border-radius: 50%;
   background-color: color('primary900');
