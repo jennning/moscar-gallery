@@ -21,19 +21,23 @@ export class CreditComponent {
   links = [
     {
       icon: 'github',
-      url: 'https://github.com/jennning/moscar-gallery'
+      url: 'https://github.com/jennning/moscar-gallery',
+      title: "Jen Ning's Github"
     },
     {
       icon: 'twitter',
-      url: 'https://twitter.com/J3nnning'
+      url: 'https://twitter.com/J3nnning',
+      title: "Jen Ning's Twitter"
     },
     {
       icon: 'codepen',
-      url: 'https://codepen.io/jenning'
+      url: 'https://codepen.io/jenning',
+      title: "Jen Ning's Codepen"
     },
     {
       icon: 'linkedin',
-      url: 'https://www.linkedin.com/in/jenning-ho/'
+      url: 'https://www.linkedin.com/in/jenning-ho/',
+      title: "Jen Ning's LinkedIn"
     }
   ];
 }

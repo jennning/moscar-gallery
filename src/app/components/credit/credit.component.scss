@@ -1,8 +1,17 @@
 @import 'base';
 
 .credit {
+  position: relative;
   display: block;
   padding: space(1) space(2);
+
+  &:hover {
+    .credit-social-container {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+    }
+  }
 }
 
 .credit-text {
@@ -17,13 +26,55 @@
 .credit-link {
   padding: space(1);
   color: color('white');
-  margin-left: space(1);
-
-  @include mobile {
-    margin-left: space(2);
-  }
 }
 
 .credit-icon {
   width: rem(12);
+}
+
+.credit-image {
+  width: rem(24);
+  margin-left: space(2);
+  margin-right: space(2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px color('white');
+}
+
+.credit-social-container {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  padding-bottom: space(1);
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease,
+    transform 0.2s cubic-bezier(0.27, 0.46, 0, 1.73);
+  pointer-events: none;
+}
+
+.credit-social-list {
+  position: relative;
+  background-color: color('primary900');
+  display: flex;
+  padding: space(1);
+  gap: space(1);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 6px);
+    border: 4px solid transparent;
+    border-top-color: color('primary900');
+  }
+
+  @include mobile {
+    gap: space(2);
+  }
 }
