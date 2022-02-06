@@ -54,12 +54,11 @@
 
   &.--tower {
     z-index: 2;
-    transform: translateY(calc(var(--hero-progress) * 16%));
+    transform: translateY(calc(var(--hero-progress) * 6%));
   }
 
   &.--background {
     z-index: 1;
-    transform: translateY(calc(var(--hero-progress) * 12%));
   }
 
   &.--full {
