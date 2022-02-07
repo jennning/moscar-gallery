@@ -26,7 +26,7 @@ $image-count: 32;
 }
 
 .gallery-item {
-  --dist: 0;
+  --dist: 4px;
 
   position: relative;
   width: var(--image-size);
@@ -42,8 +42,9 @@ $image-count: 32;
 
   &::before,
   &::after {
+    opacity: 0;
     transition: transform 0.2s cubic-bezier(0.2, 0.07, 0, 0.72),
-      border-color 0.2s ease;
+      opacity 0.2s ease;
     will-change: transform;
   }
 
@@ -56,11 +57,11 @@ $image-count: 32;
   }
 
   &:hover {
-    --dist: 3px;
+    --dist: 0px;
 
     &::before,
     &::after {
-      border-color: color('white');
+      opacity: 1;
     }
   }
 }
