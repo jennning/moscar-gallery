@@ -30,6 +30,11 @@
   }
 }
 
+.facility-map {
+  filter: saturate(1.2) contrast(1.2)
+    drop-shadow(2px 4px 6px color('primary900'));
+}
+
 .facility-list {
   counter-reset: facility-list;
   display: grid;

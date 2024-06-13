@@ -9,19 +9,19 @@ export class MasterPlanComponent {
   masterLabels = [
     {
       id: 'A',
-      color: '#9bcee6'
+      color: '#a4dfff'
     },
     {
       id: 'B',
-      color: '#f7cf98'
+      color: '#ffde92'
     },
     {
       id: 'C',
-      color: '#deb8d3'
+      color: '#f0c2e8'
     },
     {
       id: 'D',
-      color: '#b9d7b9'
+      color: '#c6e9c1'
     }
   ];
 }

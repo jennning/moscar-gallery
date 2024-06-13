@@ -67,6 +67,7 @@
 .header-logo {
   width: 100%;
   object-fit: contain;
+  filter: brightness(1.2) drop-shadow(0 0 4px color('primary-t7'));
 }
 
 .header-logo-text {

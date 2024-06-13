@@ -57,12 +57,13 @@
   display: flex;
   padding-top: space(4);
   padding-bottom: space(4);
-}
-
-.location-map-container {
   position: relative;
   margin: auto;
   width: clamp(#{rem(300)}, 50vmax, 100%);
+}
+
+.location-map {
+  filter: grayscale(0.5) brightness(1.1);
 }
 
 .location-map-marker-container {

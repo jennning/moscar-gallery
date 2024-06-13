@@ -21,6 +21,7 @@
   --image-text-gap: #{space(3)};
   --image-size: 24vmax;
   --image-size-factor: 1;
+  --swing-delay: 0;
 
   display: grid;
   grid-gap: space(1) space(4);
@@ -33,14 +34,17 @@
 
   &.--B {
     --image-size: 26vmax;
+    --swing-delay: -0.66s;
   }
 
   &.--C {
     --image-size: 30vmax;
+    --swing-delay: -1.23s;
   }
 
   &.--D {
     --image-size: 32vmax;
+    --swing-delay: -2.46s;
   }
 
   @include tablet {
@@ -101,10 +105,27 @@
     's-tl w'
     'h i'
     's-bl e';
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 .unit-image {
   grid-area: i;
+  filter: saturate(1.2) contrast(1.2)
+    drop-shadow(2px 4px 8px color('primary900'));
+  animation: unit-image-swing 3.6s ease infinite;
+  animation-delay: var(--swing-delay);
+}
+
+@keyframes unit-image-swing {
+  0%,
+  100% {
+    transform: rotateY(-15deg) rotateX(15deg);
+  }
+
+  55% {
+    transform: rotateY(15deg) rotateX(15deg);
+  }
 }
 
 .unit-image-text {

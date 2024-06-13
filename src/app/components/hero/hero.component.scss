@@ -50,11 +50,13 @@
     transform-origin: bottom;
     z-index: 3;
     transform: scale(calc(1 + var(--hero-progress) * 0.14));
+    filter: saturate(1.1) contrast(1.1);
   }
 
   &.--tower {
     z-index: 2;
     transform: translateY(calc(var(--hero-progress) * 6%));
+    filter: blur(2px);
   }
 
   &.--background {
@@ -207,6 +209,7 @@
 
 .hero-award {
   width: clamp(#{rem(48)}, 16vmin, #{rem(128)});
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.6));
 
   & + & {
     margin-top: space(2);

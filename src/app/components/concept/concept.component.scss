@@ -101,6 +101,7 @@
   width: rem(48);
   fill: color('primary');
   margin-bottom: space(2);
+  filter: drop-shadow(0 0 2px color('primary-t7'));
 }
 
 .concept-ideas-section {
@@ -159,8 +160,20 @@
 
 .concept-idea-icon {
   width: rem(128);
-  filter: brightness(0.8);
   margin-bottom: space(2);
+  animation: concept-idea-icon-flash 2s ease infinite;
+  animation-delay: var(--corner-blink-delay);
+}
+
+@keyframes concept-idea-icon-flash {
+  0%,
+  100% {
+    filter: brightness(0.8) drop-shadow(0 0 2px color('primary-t7'));
+  }
+
+  33% {
+    filter: brightness(0.8) drop-shadow(0 0 2px rgba(255, 255, 255, 0));
+  }
 }
 
 .concept-idea-name {
