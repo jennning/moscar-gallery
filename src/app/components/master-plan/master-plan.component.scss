@@ -44,6 +44,7 @@
   right: 0;
   width: calc(#{rem(30)} + 4vmax);
   transform: translateY(-#{space(2)});
+  filter: drop-shadow(0 0 2px color('primary-t7'));
 }
 
 .master-map-labels {

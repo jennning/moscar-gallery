@@ -54,6 +54,7 @@
       top: calc(var(--split-pos) - 2px);
       right: calc(100% + var(--feature-gap) / 2 - 2px);
       background-color: color('primary');
+      filter: drop-shadow(0 0 4px color('primary-t7'));
     }
 
     &::after {
@@ -101,7 +102,7 @@
   width: rem(48);
   fill: color('primary');
   margin-bottom: space(2);
-  filter: drop-shadow(0 0 2px color('primary-t7'));
+  filter: drop-shadow(0 0 4px color('primary-t7'));
 }
 
 .concept-ideas-section {
@@ -199,6 +200,7 @@
   background-color: color('primary');
   opacity: 0.1;
   animation: blink 2.2s ease infinite;
+  filter: drop-shadow(0 0 2px color('primary-t7'));
 
   &::before,
   &::after {

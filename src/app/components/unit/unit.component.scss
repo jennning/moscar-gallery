@@ -140,6 +140,7 @@
   &.--height {
     &::before {
       will-change: transform;
+      filter: drop-shadow(0 0 2px color('primary-t7'));
     }
   }
 
@@ -311,6 +312,7 @@
   width: rem(48);
   fill: color('primary');
   margin-bottom: space(2);
+  filter: drop-shadow(0 0 2px color('primary-t7'));
 }
 
 .unit-info-label {

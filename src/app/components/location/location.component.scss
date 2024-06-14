@@ -151,6 +151,7 @@
   position: absolute;
   top: calc(50% - 2px);
   background-color: color('white');
+  filter: drop-shadow(0 0 4px color('white-t7'));
 
   &::before {
     content: '';
